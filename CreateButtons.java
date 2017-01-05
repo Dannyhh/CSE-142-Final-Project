@@ -13,8 +13,9 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 import java.awt.geom.*;
+import java.io.*;
 
-public class CreateButtons extends JPanel{
+public class CreateButtons extends JPanel implements MouseListener{
    private int xCoord;
    private int yCoord;
    private String number;
@@ -27,9 +28,13 @@ public class CreateButtons extends JPanel{
    private int sum2;
    private String group;
    private ArrayList<Shape> shapes;
+   private JFrame frame;
    
-   public CreateButtons( Scanner elements ){ //brings in the list of elements 
+   public CreateButtons( Scanner elements, JFrame guiFrame){ //brings in the list of elements 
       this.elements = elements;
+      this.frame = guiFrame;
+      frame.addMouseListener(this);
+      
    }
    
    public void coord(){ //works with data from elements and breaks it into parts
@@ -41,6 +46,7 @@ public class CreateButtons extends JPanel{
         name = lineBreak.next();  
         symbol  = lineBreak.next();
         this.group = lineBreak.next();
+        
   }
   
    public void color(Graphics grphcs, String group){ // goes through info taken as a parameter and sets the color for each element.
@@ -69,8 +75,7 @@ public class CreateButtons extends JPanel{
          grphcs.setColor(new Color(195,163,145));
       }  
       group = "";
-   }
-      
+   }      
    public void paintComponent(Graphics grphcs){  //creates all of the visuals, such as the key and element boxes
       Graphics2D g2d = (Graphics2D) grphcs;
       super.paintComponent(grphcs);
@@ -128,6 +133,46 @@ public class CreateButtons extends JPanel{
       g2d.drawString("Alkali",580,210);
       g2d.drawString("Lanthanide",690,150);
       g2d.drawString("Actinide",690,210);
-   }                                                                  
+      //repaint();
+   }                                                   
+         /*public void mouseMoved(MouseEvent event) {
+      //label.setText(event.getX() + ", " + event.getY()); 
+      int xPos = event.getX();
+      int yPos = event.getY();
+      for(int i = 0;i < shapes.size();i++){
+         if(shapes.get(i).contains(xPos, yPos)){
+            ///label.setText(i + 1 + "");
+           System.out.println(i + 1);
+            //label.setBounds(500, 50, 50, 50);
+            //frame.update(g);
+            //paintComponent(g);
+            //break;
+         }
+         //paintComponent(g);
+      } 
+      //paintComponent(g);                                                                                                        
+   }
+      public void mouseDragged(MouseEvent e) {
+   }*/
+   public void mouseClicked(MouseEvent event){
+      int xPos = event.getX();
+      int yPos = event.getY();
+      for(int i = 0;i < shapes.size();i++){
+         if(shapes.get(i).contains(xPos-5, yPos-25)){
+           PopUp bigElem = new PopUp(i,frame);
+           //break;
+         }
+      } 
+
+   }
+   public void mouseEntered(MouseEvent event){
+   }
+   public void mouseExited(MouseEvent event){
+   }
+   public void mousePressed(MouseEvent event){
+   }
+   public void mouseReleased(MouseEvent event){
+   }
+                                                               
 }
 

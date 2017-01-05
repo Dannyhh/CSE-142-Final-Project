@@ -20,11 +20,12 @@ public class TableofElements {
    guiFrame.setSize(Width,Height);
    guiFrame.setVisible(true);
    guiFrame.setLocationRelativeTo(null);
-   CreateButtons panel = new CreateButtons(elements);
+   CreateButtons panel = new CreateButtons(elements, guiFrame);
    panel.setBackground(Color.WHITE);
    search.createText(panel);
    guiFrame.add(panel);
    guiFrame.setVisible(true);
+   guiFrame.setLayout(null);
    }
 }
 
