@@ -1,3 +1,12 @@
+/**
+ * PopUp.java
+ * Assignment: Final Project
+ * Purpose: This class creates the popup of 
+ * an element when clicked on.
+ * @version 1/5/17
+ * @author Noah Weiss forked from Danny Higgins
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -9,13 +18,8 @@ public class PopUp extends JFrame{
    private Scanner e;
    private Scanner printer;
    private String[] values;
-   private String weight;
-   private String name;
-   private String symbol;
-   private String group;
-   private String number;
    private JFrame frame;
-
+   
    public PopUp(int index, JFrame frame){
       this.index = index;
       this.frame = frame;

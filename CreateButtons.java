@@ -133,34 +133,13 @@ public class CreateButtons extends JPanel implements MouseListener{
       g2d.drawString("Alkali",580,210);
       g2d.drawString("Lanthanide",690,150);
       g2d.drawString("Actinide",690,210);
-      //repaint();
    }                                                   
-         /*public void mouseMoved(MouseEvent event) {
-      //label.setText(event.getX() + ", " + event.getY()); 
-      int xPos = event.getX();
-      int yPos = event.getY();
-      for(int i = 0;i < shapes.size();i++){
-         if(shapes.get(i).contains(xPos, yPos)){
-            ///label.setText(i + 1 + "");
-           System.out.println(i + 1);
-            //label.setBounds(500, 50, 50, 50);
-            //frame.update(g);
-            //paintComponent(g);
-            //break;
-         }
-         //paintComponent(g);
-      } 
-      //paintComponent(g);                                                                                                        
-   }
-      public void mouseDragged(MouseEvent e) {
-   }*/
    public void mouseClicked(MouseEvent event){
       int xPos = event.getX();
       int yPos = event.getY();
       for(int i = 0;i < shapes.size();i++){
          if(shapes.get(i).contains(xPos-5, yPos-25)){
            PopUp bigElem = new PopUp(i,frame);
-           //break;
          }
       } 
 

@@ -25,7 +25,6 @@ public class TableofElements {
    search.createText(panel);
    guiFrame.add(panel);
    guiFrame.setVisible(true);
-   guiFrame.setLayout(null);
    }
 }
 
