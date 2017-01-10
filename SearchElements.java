@@ -36,6 +36,7 @@ public Scanner elementsTwo; //second copy of elements
       this.elements = elements;
       this.elementsTwo = elementsTwo;
       listGenerator();
+      
    }
    public void listGenerator(){ //creates the 3 array lists for searching
    for(int i = 0; i < numberOfElements; i++){
@@ -68,6 +69,9 @@ public Scanner elementsTwo; //second copy of elements
    public void searchScanner(){ //displays the symbol and the element name of the users input
      for(int i = 0; i < numberOfElements; i++){
       if(this.elementNames.get(i).equalsIgnoreCase(this.input) || this.elementSymbol.get(i).equalsIgnoreCase(this.input)){
+         System.out.println("Information (In order of appearance): \n" +
+         "Atomic Number, Atomic Weight, Name, Atomic Symbol, Classification, State \n" + 
+         "Melting Point (Celcius), Boiling Point (Celcius), Density, Discovery Date (If Known)");
          System.out.println(this.lineList.get(i).toString());
       }
 
