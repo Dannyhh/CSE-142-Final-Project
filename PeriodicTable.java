@@ -16,9 +16,10 @@ import javax.swing.*;
 public class PeriodicTable {
    public static void main(String[] args)throws FileNotFoundException {
       Scanner elements = new Scanner(new File("elements.txt")); //brings in the .txt file of elements
-      Scanner elementsCopy = new Scanner(new File("elements.txt")); //creates a copy of the .txt file
+      Scanner elementsCopy = new Scanner(new File("elements.txt"));//creates a copy of the .txt file
+      Scanner elementsSecondCopy = new Scanner(new File("elements.txt")); //creates a copy of the .txt file
       JFrame guiFrame = new JFrame("The Periodic Table"); //creates the GUI frame
-      SearchElements search = new SearchElements(elementsCopy); //initializes the search class
+      SearchElements search = new SearchElements(elementsCopy, elementsSecondCopy); //initializes the search class
       TableofElements table = new TableofElements(guiFrame, elements, search); //initializes the GUI classes
       
    }
